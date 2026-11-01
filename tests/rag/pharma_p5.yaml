@@ -1,0 +1,60 @@
+# Phase 5 test set: pharma documents. doc_fact: the answer must contain every
+# expect_terms entry and cite a chunk of expect_doc. refuse: the answer must refuse.
+pack: pharma
+questions:
+- id: PD01
+  type: doc_fact
+  question: How quickly must a serious adverse event be reported to Pharmacovigilance?
+  expect_doc: PS-SOP-001
+  expect_terms:
+  - 24 hours
+- id: PD02
+  type: doc_fact
+  question: Within what time must a non-serious adverse event be reported?
+  expect_doc: PS-SOP-001
+  expect_terms:
+  - 5 business days
+- id: PD03
+  type: doc_fact
+  question: What are the minimum criteria for a valid adverse event report?
+  expect_doc: PS-SOP-001
+  expect_terms:
+  - reporter
+  - suspect drug
+- id: PD04
+  type: doc_fact
+  question: How often does the Signal Review Committee meet?
+  expect_doc: PS-SOP-002
+  expect_terms:
+  - monthly
+- id: PD05
+  type: doc_fact
+  question: When is a drug-event pair flagged as a possible signal?
+  expect_doc: PS-SOP-002
+  expect_terms:
+  - '2'
+  - 3 cases
+- id: PD06
+  type: doc_fact
+  question: Within how many days must a validated signal be assessed?
+  expect_doc: PS-SOP-002
+  expect_terms:
+  - 60 days
+- id: PD07
+  type: doc_fact
+  question: What is the meal cap per HCP per event under the HCP engagement policy?
+  expect_doc: PS-POL-003
+  expect_terms:
+  - '75'
+- id: PD08
+  type: doc_fact
+  question: Where must off-label questions from an HCP be referred?
+  expect_doc: PS-POL-003
+  expect_terms:
+  - Medical Information
+- id: PD09
+  type: refuse
+  question: What is the reporting policy for veterinary adverse events?
+- id: PD10
+  type: refuse
+  question: How much does PharmaSignal pay HCPs for advisory board meetings?

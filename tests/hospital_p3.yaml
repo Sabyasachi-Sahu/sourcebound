@@ -1,0 +1,47 @@
+VS Code Editor: tests\hospital_p3.yaml
+pack: hospital
+questions:
+  - id: H01
+    type: find
+    question: Which patients have type 2 diabetes?
+    term: diabetes mellitus type 2
+    min_cited: 2
+  - id: H02
+    type: find
+    question: Which patients have essential hypertension?
+    term: essential hypertension
+    min_cited: 2
+  - id: H03
+    type: find
+    question: Which patients have ischemic heart disease?
+    term: ischemic heart disease
+    min_cited: 2
+  - id: H04
+    type: find
+    question: Which patients have had acute bronchitis?
+    term: acute bronchitis
+    min_cited: 2
+  - id: H05
+    type: comorbidity
+    question: What conditions commonly occur alongside type 2 diabetes?
+    term: diabetes mellitus type 2
+  - id: H06
+    type: comorbidity
+    question: What other conditions do patients with essential hypertension have?
+    term: essential hypertension
+  - id: H07
+    type: find
+    question: Which patients have neuropathy due to type 2 diabetes?
+    term: neuropathy due to type 2 diabetes mellitus
+    min_cited: 2
+  - id: H08
+    type: refuse_count
+    question: How many patients have diabetes?
+    term: diabetes
+  - id: H09
+    type: refuse_count
+    question: List every patient with hypertension.
+    term: hypertension
+  - id: H10
+    type: unanswerable
+    question: What was the most recent blood pressure reading for patient 449a8a21-c29b-08b6-2043-15e903ca96d1?

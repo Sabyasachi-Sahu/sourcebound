@@ -1,0 +1,104 @@
+# Source document briefs. scripts/gen_pack_docs.py writes one markdown file per
+# document. Every fact must appear word for word: the generator checks it, and
+# the Phase 5 test questions are written from these facts.
+pack: banking
+company: CreditGuard, a synthetic retail bank
+documents:
+- doc_id: CG-POL-001
+  title: Personal Lending Policy
+  doc_type: policy
+  version: '3.2'
+  effective_date: '2026-03-01'
+  owner: Credit Risk
+  style: formal policy with numbered clauses
+  sections:
+  - heading: Purpose and scope
+    brief: Why the policy exists and which products it covers (unsecured personal loans).
+    facts: []
+  - heading: Eligibility
+    brief: Who may apply, residency and identity checks.
+    facts:
+    - Applicants must be at least 21 years old
+  - heading: Affordability
+    brief: How affordability is assessed before lending.
+    facts:
+    - The total debt-to-income ratio must not exceed 40%
+  - heading: Loan amounts and pricing
+    brief: Limits and the interest rate range.
+    facts:
+    - Personal loans range from 1,000 to 25,000
+    - Interest rates range from 3% to 14% a year
+  - heading: Approval authority
+    brief: Who can approve which loan sizes.
+    facts:
+    - Loans above 15,000 need approval from a senior credit officer
+- doc_id: CG-POL-002
+  title: Collections and Hardship Policy
+  doc_type: policy
+  version: '2.0'
+  effective_date: '2025-11-15'
+  owner: Collections
+  style: plain-English policy with short paragraphs and a few bullet lists
+  sections:
+  - heading: Definitions
+    brief: When an account counts as late, in arrears or defaulted.
+    facts:
+    - A loan is in arrears from 30 days past due
+    - A loan is defaulted after 120 days past due
+  - heading: Contacting customers
+    brief: How and when the bank contacts customers who miss a payment.
+    facts:
+    - First contact must be made within 5 business days of a missed payment
+    - No collection calls are made before 8 am or after 8 pm
+  - heading: Hardship support
+    brief: Options for customers in financial difficulty.
+    facts:
+    - A hardship plan may pause payments for up to 3 months
+  - heading: Escalation
+    brief: When a case goes to the recoveries team.
+    facts: []
+- doc_id: CG-PRO-003
+  title: KYC and Anti-Money Laundering Procedure
+  doc_type: procedure
+  version: '4.1'
+  effective_date: '2026-01-10'
+  owner: Financial Crime Compliance
+  style: step-by-step procedure with numbered steps
+  sections:
+  - heading: Customer due diligence
+    brief: Identity and address checks at onboarding.
+    facts: []
+  - heading: Periodic review
+    brief: How often customer information is refreshed.
+    facts:
+    - KYC information must be refreshed every 24 months
+    - High-risk customers are reviewed every 12 months
+  - heading: Cash reporting
+    brief: Reporting large cash deposits.
+    facts:
+    - Cash deposits of 10,000 or more must be reported to the Financial Intelligence Unit within
+      15 days
+  - heading: Structuring
+    brief: Spotting deposits split to avoid reporting.
+    facts:
+    - Several cash deposits just under 10,000 within 7 days must be escalated to the AML team
+- doc_id: CG-REG-004
+  title: CreditGuard Lending Code (synthetic regulatory excerpts)
+  doc_type: regulation
+  version: '2026'
+  effective_date: '2026-01-01'
+  owner: Regulatory Affairs
+  style: short regulatory articles, each starting with 'Article N'
+  sections:
+  - heading: Pre-contract information
+    brief: What the borrower receives before signing.
+    facts:
+    - A key facts statement must be given to the borrower before signing
+  - heading: Right to withdraw
+    brief: Cooling-off rights.
+    facts:
+    - Borrowers have a cooling-off period of 14 days
+  - heading: Complaints
+    brief: How complaints are handled.
+    facts:
+    - Complaints are acknowledged within 3 business days and resolved within 30 days

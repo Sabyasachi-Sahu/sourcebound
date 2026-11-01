@@ -1,0 +1,59 @@
+# Phase 5 test set: banking documents. doc_fact: the answer must contain every
+# expect_terms entry and cite a chunk of expect_doc. refuse: the answer must refuse.
+pack: banking
+questions:
+- id: B01
+  type: doc_fact
+  question: What is the maximum debt-to-income ratio for a personal loan?
+  expect_doc: CG-POL-001
+  expect_terms:
+  - 40%
+- id: B02
+  type: doc_fact
+  question: Who must approve a personal loan above 15,000?
+  expect_doc: CG-POL-001
+  expect_terms:
+  - senior credit officer
+- id: B03
+  type: doc_fact
+  question: From how many days past due is a loan in arrears?
+  expect_doc: CG-POL-002
+  expect_terms:
+  - 30 days
+- id: B04
+  type: doc_fact
+  question: For how long can a hardship plan pause payments?
+  expect_doc: CG-POL-002
+  expect_terms:
+  - 3 months
+- id: B05
+  type: doc_fact
+  question: How often must KYC information be refreshed for a standard customer?
+  expect_doc: CG-PRO-003
+  expect_terms:
+  - 24 months
+- id: B06
+  type: doc_fact
+  question: Where and how quickly must a cash deposit of 10,000 or more be reported?
+  expect_doc: CG-PRO-003
+  expect_terms:
+  - 15 days
+  - Financial Intelligence Unit
+- id: B07
+  type: doc_fact
+  question: How long is the cooling-off period for borrowers under the CreditGuard Lending Code?
+  expect_doc: CG-REG-004
+  expect_terms:
+  - 14 days
+- id: B08
+  type: doc_fact
+  question: Within how many days must a complaint be resolved?
+  expect_doc: CG-REG-004
+  expect_terms:
+  - 30 days
+- id: B09
+  type: refuse
+  question: What was CreditGuard's annual profit last year?
+- id: B10
+  type: refuse
+  question: Who is the chief executive of CreditGuard?

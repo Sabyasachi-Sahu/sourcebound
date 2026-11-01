@@ -1,0 +1,59 @@
+# Phase 5 test set: hospital documents. doc_fact: the answer must contain every
+# expect_terms entry and cite a chunk of expect_doc. refuse: the answer must refuse.
+pack: hospital
+questions:
+- id: HD01
+  type: doc_fact
+  question: Within how many hours of discharge must the follow-up call happen under the guideline?
+  expect_doc: CB-GDL-001
+  expect_terms:
+  - 48 hours
+- id: HD02
+  type: doc_fact
+  question: Which LACE score makes a patient high risk under the readmission guideline?
+  expect_doc: CB-GDL-001
+  expect_terms:
+  - '10'
+- id: HD03
+  type: doc_fact
+  question: How soon must high-risk patients be seen in clinic after discharge?
+  expect_doc: CB-GDL-001
+  expect_terms:
+  - 7 days
+- id: HD04
+  type: doc_fact
+  question: Within how many hours is the discharge summary sent to the GP?
+  expect_doc: CB-POL-002
+  expect_terms:
+  - 24 hours
+- id: HD05
+  type: doc_fact
+  question: What is the target discharge time in the discharge policy?
+  expect_doc: CB-POL-002
+  expect_terms:
+  - 11 am
+- id: HD06
+  type: doc_fact
+  question: What weight gain must a heart failure patient report under the protocol?
+  expect_doc: CB-PRO-003
+  expect_terms:
+  - 2 kg
+  - 3 days
+- id: HD07
+  type: doc_fact
+  question: How soon after discharge does the heart failure nurse visit under the protocol?
+  expect_doc: CB-PRO-003
+  expect_terms:
+  - 3 days
+- id: HD08
+  type: doc_fact
+  question: When does the cardiology review take place in the heart failure protocol?
+  expect_doc: CB-PRO-003
+  expect_terms:
+  - 30 days
+- id: HD09
+  type: refuse
+  question: What does the CareBridge policy say about car parking fees?
+- id: HD10
+  type: refuse
+  question: What is the CareBridge policy on organ donation?

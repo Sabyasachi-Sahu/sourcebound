@@ -1,0 +1,58 @@
+# Phase 5 test set: datasteward documents. doc_fact: the answer must contain every
+# expect_terms entry and cite a chunk of expect_doc. refuse: the answer must refuse.
+pack: datasteward
+questions:
+- id: DD01
+  type: doc_fact
+  question: What is the primary key of the payout table?
+  expect_doc: DS-MAP-INSURANCE
+  expect_terms:
+  - payout_id
+- id: DD02
+  type: doc_fact
+  question: Which table does the claim.encounter_id column reference?
+  expect_doc: DS-MAP-INSURANCE
+  expect_terms:
+  - encounter
+- id: DD03
+  type: doc_fact
+  question: Which script generates the loan table?
+  expect_doc: DS-MAP-BANKING
+  expect_terms:
+  - gen_banking
+- id: DD04
+  type: doc_fact
+  question: What data type is the admission.readmitted_30d column?
+  expect_doc: DS-MAP-HOSPITAL
+  expect_terms:
+  - BOOLEAN
+- id: DD05
+  type: doc_fact
+  question: What date range does the date_range check allow?
+  expect_doc: DS-DQR-001
+  expect_terms:
+  - '1900-01-01'
+- id: DD06
+  type: doc_fact
+  question: What happens to a bronze row that fails a data quality check?
+  expect_doc: DS-DQR-001
+  expect_terms:
+  - quarantine
+- id: DD07
+  type: doc_fact
+  question: Which defect type does the foreign_key check find?
+  expect_doc: DS-DQR-001
+  expect_terms:
+  - orphan
+- id: DD08
+  type: doc_fact
+  question: Which consistency rule checks the claim table?
+  expect_doc: DS-DQR-001
+  expect_terms:
+  - claim_follows_encounter
+- id: DD09
+  type: refuse
+  question: Who owns the Databricks workspace?
+- id: DD10
+  type: refuse
+  question: How much does the data lake storage cost each month?

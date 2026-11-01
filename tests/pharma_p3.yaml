@@ -1,0 +1,58 @@
+pack: pharma
+questions:
+  - id: P01
+    type: label_fact
+    question: What is the boxed warning for metformin?
+    drug: metformin
+    sections: [boxed_warning, warnings_and_cautions, warnings]
+    expect_any: [lactic acidosis]
+  - id: P02
+    type: label_fact
+    question: What serious risk does the warfarin boxed warning describe?
+    drug: warfarin
+    sections: [boxed_warning, warnings_and_cautions, warnings]
+    expect_any: [bleeding, hemorrhage]
+  - id: P03
+    type: label_fact
+    question: What does the lisinopril label say about use in pregnancy?
+    drug: lisinopril
+    sections: [boxed_warning, warnings_and_cautions, warnings]
+    expect_any: [fetal, pregnan]
+  - id: P04
+    type: label_fact
+    question: When is atorvastatin contraindicated?
+    drug: atorvastatin
+    sections: [contraindications]
+    expect_any: [liver, hypersensitivity]
+  - id: P05
+    type: label_fact
+    question: What cardiovascular and gastrointestinal risks does the ibuprofen label warn about?
+    drug: ibuprofen
+    sections: [boxed_warning, warnings_and_cautions, warnings]
+    expect_any: [cardiovascular, gastrointestinal, heart attack, stomach bleeding]
+  - id: P06
+    type: label_fact
+    question: What liver risk does acetaminophen carry?
+    drug: acetaminophen
+    expect_any: [liver, hepatotoxicity]
+  - id: P07
+    type: label_fact
+    question: Which drugs interact with simvastatin?
+    drug: simvastatin
+    sections: [drug_interactions, contraindications, warnings_and_cautions, dosage_and_administration]
+    expect_any: [cyclosporine, gemfibrozil, itraconazole, clarithromycin, amiodarone, verapamil, diltiazem, amlodipine]
+  - id: P08
+    type: label_fact
+    question: What is hydrochlorothiazide used to treat?
+    drug: hydrochlorothiazide
+    sections: [indications_and_usage]
+    expect_any: [hypertension, edema]
+  - id: P09
+    type: label_fact
+    question: What infections is amoxicillin indicated for?
+    drug: amoxicillin
+    sections: [indications_and_usage]
+    expect_any: [infection, ear, throat, pylori]
+  - id: P10
+    type: unanswerable
+    question: What is the retail price of metformin?

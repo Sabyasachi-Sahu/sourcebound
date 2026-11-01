@@ -1,0 +1,58 @@
+# Phase 5 test set: insurance documents. doc_fact: the answer must contain every
+# expect_terms entry and cite a chunk of expect_doc. refuse: the answer must refuse.
+pack: insurance
+questions:
+- id: I01
+  type: doc_fact
+  question: What share of an eligible claim does the Premium product pay?
+  expect_doc: CS-POL-001
+  expect_terms:
+  - 90%
+- id: I02
+  type: doc_fact
+  question: How long after the date of service can a claim be submitted?
+  expect_doc: CS-POL-001
+  expect_terms:
+  - 90 days
+- id: I03
+  type: doc_fact
+  question: How long is the waiting period for a new policy?
+  expect_doc: CS-POL-001
+  expect_terms:
+  - 30 days
+- id: I04
+  type: doc_fact
+  question: What extra step applies to claims above 10,000?
+  expect_doc: CS-MAN-002
+  expect_terms:
+  - second assessor
+- id: I05
+  type: doc_fact
+  question: How quickly are approved claims paid?
+  expect_doc: CS-MAN-002
+  expect_terms:
+  - 21 days
+- id: I06
+  type: doc_fact
+  question: What do Tier 3 drugs require under the formulary?
+  expect_doc: CS-FRM-003
+  expect_terms:
+  - prior authorisation
+- id: I07
+  type: doc_fact
+  question: What is the co-payment for Tier 1 generic drugs?
+  expect_doc: CS-FRM-003
+  expect_terms:
+  - '10'
+- id: I08
+  type: doc_fact
+  question: Where is a case referred when three or more claimants share one bank account?
+  expect_doc: CS-FRD-004
+  expect_terms:
+  - Special Investigations Unit
+- id: I09
+  type: refuse
+  question: What is ClaimSense's premium for travel insurance?
+- id: I10
+  type: refuse
+  question: How many employees does ClaimSense have?

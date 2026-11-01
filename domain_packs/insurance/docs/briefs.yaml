@@ -1,0 +1,101 @@
+# Source document briefs. scripts/gen_pack_docs.py writes one markdown file per
+# document. Every fact must appear word for word: the generator checks it, and
+# the Phase 5 test questions are written from these facts.
+pack: insurance
+company: ClaimSense, a synthetic health insurer
+documents:
+- doc_id: CS-POL-001
+  title: Health Insurance Policy Wording
+  doc_type: policy_wording
+  version: '5.0'
+  effective_date: '2026-01-01'
+  owner: Product
+  style: insurance policy wording with defined terms in bold and numbered clauses
+  sections:
+  - heading: What this policy covers
+    brief: Hospital, outpatient and pharmacy cover across three products.
+    facts: []
+  - heading: Products and coverage rates
+    brief: The Basic, Standard and Premium products.
+    facts:
+    - Basic pays 60% of an eligible claim
+    - Standard pays 80% of an eligible claim
+    - Premium pays 90% of an eligible claim
+  - heading: Waiting periods
+    brief: When cover starts.
+    facts:
+    - New policies have a waiting period of 30 days
+  - heading: Making a claim
+    brief: Deadlines and documents for claims.
+    facts:
+    - Claims must be submitted within 90 days of the date of service
+  - heading: Exclusions
+    brief: What is not covered.
+    facts:
+    - Cosmetic surgery is not covered
+- doc_id: CS-MAN-002
+  title: Claims Handling Manual
+  doc_type: manual
+  version: '3.4'
+  effective_date: '2025-09-01'
+  owner: Claims Operations
+  style: internal operations manual with checklists
+  sections:
+  - heading: Receiving a claim
+    brief: Logging and acknowledging new claims.
+    facts:
+    - Every claim is acknowledged within 2 business days
+  - heading: Assessment
+    brief: How claims are assessed and who assesses them.
+    facts:
+    - Claims above 10,000 need a second assessor
+  - heading: Payment
+    brief: Paying approved claims.
+    facts:
+    - Approved claims are paid within 21 days
+  - heading: Denials
+    brief: What a denial letter must contain.
+    facts:
+    - A denial letter must quote the policy clause that applies
+- doc_id: CS-FRM-003
+  title: Pharmacy Benefit and Formulary Guide
+  doc_type: guide
+  version: '2026.1'
+  effective_date: '2026-02-01'
+  owner: Pharmacy Benefits
+  style: member guide with a tier table written as bullet points
+  sections:
+  - heading: Drug tiers
+    brief: How drugs are grouped into tiers.
+    facts:
+    - Tier 1 generic drugs have a co-payment of 10
+    - Tier 3 drugs require prior authorisation
+  - heading: Quantity limits
+    brief: How much can be dispensed at once.
+    facts:
+    - Prescriptions are limited to a 90-day supply
+  - heading: Pharmacy claims
+    brief: How pharmacy claims link to prescriptions.
+    facts:
+    - Every pharmacy claim must match a prescription
+- doc_id: CS-FRD-004
+  title: Fraud Referral Guide
+  doc_type: guide
+  version: '1.3'
+  effective_date: '2025-12-01'
+  owner: Special Investigations Unit
+  style: practical guide with red-flag lists
+  sections:
+  - heading: Red flags
+    brief: Signs that a claim may be fraudulent.
+    facts:
+    - Refer the case to the Special Investigations Unit if three or more claimants share one
+      bank account
+  - heading: Holding payments
+    brief: What happens to payments during review.
+    facts:
+    - Payouts to a shared bank account are held until the review ends
+  - heading: Making a referral
+    brief: How quickly and how to refer.
+    facts:
+    - Referrals must be made within 2 business days

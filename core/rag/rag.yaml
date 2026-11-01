@@ -1,0 +1,95 @@
+
+# Production RAG settings and pack sources. Read by every module in core/rag.
+settings:
+  vector_dir: data/vectordb            # same ChromaDB folder as Phase 3, new collections
+  store_dir: data/rag                  # chunk store, manifest, cache, latency log
+  rendered_dir: data/processed/rag_docs   # labels rendered to markdown (git-ignored)
+  collection_prefix: rag_
+  embed_query_prefix: "search_query: "      # nomic-embed-text task prefixes
+  embed_doc_prefix: "search_document: "
+  embed_batch: 32
+  chunk_chars: 900          # target characters per chunk (generic documents)
+  label_chunk_chars: 1200   # drug labels, as in Phase 3
+  overlap_lines: 2          # lines repeated at the start of the next chunk
+  wrap_width: 100           # label text is wrapped to lines of this width
+  candidates: 20            # per retriever (keyword and vector), per pack
+  rrf_k: 60                 # reciprocal rank fusion constant
+  reranker: llm             # llm | none
+  rerank_pool: 12           # fused candidates sent to the reranker
+  top_k: 6                  # excerpts given to the model
+  per_pack_min: 2           # federated questions: excerpts kept from each routed pack
+  max_packs: 3
+  weak_rerank: 2            # best rerank score (0-3) below this = weak evidence
+  weak_similarity: 0.45     # best cosine similarity below this = weak (no reranker)
+  retry_on_weak: true       # reformulate the query once when evidence is weak
+  cache: true
+  prompt_version: p5-v2
+  # Step 5.12: freshness and safe cache invalidation
+  cache_ttl_hours: 24       # safety net only; validity is checked on every read
+  snapshot_dir: data/rag/snapshots   # one index snapshot per ingest (audit trail)
+  # Risk tiers (set per pack below):
+  #   high    final answers are never cached; retrieved evidence is cached per index
+  #           version; the cited source files are re-hashed on every question
+  #   medium  answers cached; on change, claims are re-checked against the new text
+  #   low     answers cached; any change to a cited chunk drops the answer
+ 
+packs:
+  hospital:
+    risk: medium
+    title: CareBridge (hospital)
+    default_scope: records
+    scope_keywords:
+      guidance: [guideline, guidelines, policy, protocol, procedure, discharge, discharged,
+                 follow-up, follow up, readmission prevention, lace, transitional, home visit,
+                 should, must, required, within, how soon, timeline, gp, heart failure]
+    sources:
+      - {type: patient_records, scope: records}
+      - {type: markdown_dir, path: domain_packs/hospital/docs, scope: guidance}
+    route_keywords: [carebridge, hospital, discharge, discharged, readmission, readmitted,
+                     patient, patients, gp, heart failure, lace, clinic, nurse]
+    phase3_prompt_scopes: [records]
+ 
+  pharma:
+    risk: high
+    title: PharmaSignal (pharma)
+    default_scope: labels
+    scope_keywords:
+      procedures: [procedure, sop, report, reported, reporting, adverse event, signal,
+                   committee, hcp, hcps, meal, meals, sponsored, meeting, policy,
+                   off-label, pharmacovigilance, medical information]
+    sources:
+      - {type: pharma_labels, scope: labels}
+      - {type: markdown_dir, path: domain_packs/pharma/docs, scope: procedures}
+    route_keywords: [pharmasignal, label, labels, boxed warning, warning, drug, drugs,
+                     adverse event, pharmacovigilance, signal, hcp, interaction, interact,
+                     metformin, lisinopril, atorvastatin, simvastatin, amlodipine,
+                     hydrochlorothiazide, acetaminophen, ibuprofen, amoxicillin, warfarin]
+    phase3_prompt_scopes: [labels]
+ 
+  banking:
+    risk: high
+    title: CreditGuard (banking)
+    sources:
+      - {type: markdown_dir, path: domain_packs/banking/docs, scope: documents}
+    route_keywords: [creditguard, bank, banking, loan, loans, lending, borrower, arrears,
+                     hardship, collections, kyc, aml, cash deposit, deposits, structuring,
+                     cooling-off, debt-to-income, credit officer]
+ 
+  insurance:
+    risk: high
+    title: ClaimSense (insurance)
+    sources:
+      - {type: markdown_dir, path: domain_packs/insurance/docs, scope: documents}
+    route_keywords: [claimsense, insurance, insurer, claim, claims, claimant, claimants,
+                     policy wording, coverage, cover, covered, premium, formulary, tier,
+                     co-payment, prior authorisation, assessor, payout, fraud,
+                     special investigations]
+ 
+  datasteward:
+    risk: low
+    title: DataSteward (data governance)
+    sources:
+      - {type: markdown_dir, path: domain_packs/datasteward/docs, scope: documents}
+    route_keywords: [datasteward, table, tables, column, columns, primary key, foreign key,
+                     lineage, defect, defects, quarantine, bronze, silver, gold, mapping,
+                     data quality, check, rule, schema]

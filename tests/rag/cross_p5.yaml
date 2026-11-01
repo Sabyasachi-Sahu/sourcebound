@@ -1,0 +1,43 @@
+# Federated questions: no pack is given, the router must find the packs, and the
+# answer must cite at least one excerpt from every pack in expect_packs.
+pack: cross
+questions:
+- id: XF1
+  type: cross
+  question: What does the warfarin label warn about bleeding, and what do Tier 3 drugs require under the
+    ClaimSense formulary?
+  expect_packs:
+  - pharma
+  - insurance
+  expect_terms:
+  - bleeding
+  - prior authorisation
+- id: XF2
+  type: cross
+  question: How soon must high-risk patients be seen in clinic after discharge, and how quickly does ClaimSense
+    pay approved claims?
+  expect_packs:
+  - hospital
+  - insurance
+  expect_terms:
+  - 7 days
+  - 21 days
+- id: XF3
+  type: cross
+  question: What does the ClaimSense fraud guide require when claimants share one bank account, and when
+    must CreditGuard escalate structured cash deposits?
+  expect_packs:
+  - insurance
+  - banking
+  expect_terms:
+  - Special Investigations Unit
+- id: XF4
+  type: cross
+  question: How quickly must a serious adverse event be reported, and within how many hours of discharge
+    does the CareBridge follow-up call happen?
+  expect_packs:
+  - pharma
+  - hospital
+  expect_terms:
+  - 24 hours
+  - 48 hours

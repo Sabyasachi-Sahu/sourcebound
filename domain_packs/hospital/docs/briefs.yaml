@@ -1,0 +1,74 @@
+# Source document briefs. scripts/gen_pack_docs.py writes one markdown file per
+# document. Every fact must appear word for word: the generator checks it, and
+# the Phase 5 test questions are written from these facts.
+pack: hospital
+company: CareBridge, a synthetic hospital network
+documents:
+- doc_id: CB-GDL-001
+  title: Readmission Prevention Guideline
+  doc_type: guideline
+  version: '2.1'
+  effective_date: '2026-02-15'
+  owner: Clinical Governance
+  style: clinical guideline with recommendations numbered R1, R2 and so on
+  sections:
+  - heading: Purpose
+    brief: Reducing avoidable 30-day readmissions.
+    facts: []
+  - heading: Risk assessment
+    brief: How readmission risk is scored at discharge.
+    facts:
+    - Patients with a LACE score of 10 or more are high risk
+  - heading: Follow-up after discharge
+    brief: Calls and clinic visits after discharge.
+    facts:
+    - Every patient receives a follow-up call within 48 hours of discharge
+    - High-risk patients are seen in clinic within 7 days of discharge
+  - heading: Medicines
+    brief: Medication safety at discharge.
+    facts:
+    - Medication reconciliation is completed before discharge
+- doc_id: CB-POL-002
+  title: Discharge Policy
+  doc_type: policy
+  version: '4.0'
+  effective_date: '2025-10-01'
+  owner: Patient Flow
+  style: hospital policy with roles and responsibilities
+  sections:
+  - heading: Planning discharge
+    brief: Starting discharge planning early.
+    facts:
+    - Discharge planning starts within 24 hours of admission
+  - heading: On the day of discharge
+    brief: Timing and what the patient receives.
+    facts:
+    - The target discharge time is before 11 am
+    - Every patient receives a written medication list
+  - heading: Communication with the GP
+    brief: Sharing the discharge summary.
+    facts:
+    - The discharge summary is sent to the GP within 24 hours
+- doc_id: CB-PRO-003
+  title: Heart Failure Transitional Care Protocol
+  doc_type: protocol
+  version: '1.2'
+  effective_date: '2026-04-01'
+  owner: Cardiology
+  style: protocol written as a care pathway with numbered stages
+  sections:
+  - heading: Eligibility
+    brief: Which patients enter the pathway.
+    facts: []
+  - heading: Home monitoring
+    brief: What the patient checks at home.
+    facts:
+    - Patients weigh themselves daily and report a gain of more than 2 kg in 3 days
+  - heading: Home visits
+    brief: Nurse visits after discharge.
+    facts:
+    - A heart failure nurse visits within 3 days of discharge
+  - heading: Review
+    brief: The end-of-pathway review.
+    facts:
+    - A cardiology review takes place at 30 days

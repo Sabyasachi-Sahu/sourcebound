@@ -1,0 +1,15 @@
+name: hospital
+title: Hospital patient records (CareBridge)
+collection: patients
+docs_file: data/processed/patient_docs.jsonl
+top_k: 5
+id_pattern: '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
+test_file: tests/hospital_p3.yaml
+claim_check: patient_conditions
+system_prompt: |
+  You are a clinical data assistant. Answer ONLY from the patient records
+  provided in the context. Cite the patient ID in square brackets for every
+  fact you use. If the context does not contain the answer, say so.
+  The context is a small sample of the most relevant records, not the full
+  database, so never present counts or lists as complete.
+  Write each condition name in **bold**, followed by the patient IDs that have it.

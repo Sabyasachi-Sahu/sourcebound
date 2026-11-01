@@ -1,0 +1,67 @@
+# Source document briefs. scripts/gen_pack_docs.py writes one markdown file per
+# document. Every fact must appear word for word: the generator checks it, and
+# the Phase 5 test questions are written from these facts.
+pack: pharma
+company: PharmaSignal, a synthetic pharmaceutical company
+documents:
+- doc_id: PS-SOP-001
+  title: Adverse Event Reporting SOP
+  doc_type: sop
+  version: '6.0'
+  effective_date: '2026-01-20'
+  owner: Pharmacovigilance
+  style: standard operating procedure with numbered steps and a responsibilities list
+  sections:
+  - heading: Scope
+    brief: Which staff and which reports the SOP covers.
+    facts: []
+  - heading: What makes a valid report
+    brief: The minimum information for a report.
+    facts:
+    - 'A valid report needs four minimum criteria: an identifiable patient, an identifiable
+      reporter, a suspect drug and an adverse event'
+  - heading: Reporting timelines
+    brief: How fast reports go to Pharmacovigilance.
+    facts:
+    - Serious adverse events are reported to Pharmacovigilance within 24 hours
+    - Non-serious adverse events are reported within 5 business days
+- doc_id: PS-SOP-002
+  title: Safety Signal Review Procedure
+  doc_type: procedure
+  version: '2.3'
+  effective_date: '2025-12-05'
+  owner: Drug Safety
+  style: procedure with a decision flow written as numbered steps
+  sections:
+  - heading: Signal detection
+    brief: How possible signals are found in report data.
+    facts:
+    - A drug-event pair is flagged when the PRR is 2 or more with at least 3 cases
+  - heading: Signal Review Committee
+    brief: Who reviews signals and how often.
+    facts:
+    - The Signal Review Committee meets monthly
+  - heading: Assessment
+    brief: Deadlines for assessing a validated signal.
+    facts:
+    - Validated signals are assessed within 60 days
+- doc_id: PS-POL-003
+  title: HCP Engagement Policy
+  doc_type: policy
+  version: '3.0'
+  effective_date: '2026-03-01'
+  owner: Compliance
+  style: compliance policy with do and do-not lists
+  sections:
+  - heading: Principles
+    brief: Why interactions with healthcare professionals are controlled.
+    facts: []
+  - heading: Hospitality
+    brief: Limits on meals and events.
+    facts:
+    - Meals are capped at 75 per HCP per event
+    - An HCP may attend no more than 4 sponsored meetings per year
+  - heading: Medical questions
+    brief: Handling questions about unapproved uses.
+    facts:
+    - Off-label questions are referred to Medical Information

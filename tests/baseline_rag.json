@@ -1,0 +1,154 @@
+{
+  "hospital": {
+    "runs": 3,
+    "questions": 10,
+    "run_scores": [
+      0.6,
+      0.5,
+      0.5
+    ],
+    "mean": 0.5333,
+    "spread": 0.0471,
+    "hit_rate": 1,
+    "citation_accuracy": 1.0,
+    "refusal_rate": 1,
+    "false_refusals": 1,
+    "latency_p50_ms": 7937,
+    "latency_p95_ms": 16484,
+    "created": "20261101_130759"
+  },
+  "pharma": {
+    "runs": 3,
+    "questions": 10,
+    "run_scores": [
+      0.8,
+      0.8,
+      0.8
+    ],
+    "mean": 0.8,
+    "spread": 0.0,
+    "hit_rate": 1,
+    "citation_accuracy": 1.0,
+    "refusal_rate": 1,
+    "false_refusals": 1,
+    "latency_p50_ms": 6141,
+    "latency_p95_ms": 11359,
+    "created": "20261101_131126"
+  },
+  "banking": {
+    "runs": 3,
+    "questions": 10,
+    "run_scores": [
+      0.6,
+      0.7,
+      0.6
+    ],
+    "mean": 0.6333,
+    "spread": 0.0471,
+    "hit_rate": 1,
+    "citation_accuracy": 1.0,
+    "refusal_rate": 1,
+    "false_refusals": 3,
+    "latency_p50_ms": 5141,
+    "latency_p95_ms": 12359,
+    "created": "20261101_131431"
+  },
+  "insurance": {
+    "runs": 3,
+    "questions": 10,
+    "run_scores": [
+      0.5,
+      0.6,
+      0.5
+    ],
+    "mean": 0.5333,
+    "spread": 0.0471,
+    "hit_rate": 1,
+    "citation_accuracy": 0.9231,
+    "refusal_rate": 1,
+    "false_refusals": 5,
+    "latency_p50_ms": 6875,
+    "latency_p95_ms": 11031,
+    "created": "20261101_131813"
+  },
+  "datasteward": {
+    "runs": 3,
+    "questions": 10,
+    "run_scores": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "mean": 0.5,
+    "spread": 0.0,
+    "hit_rate": 1,
+    "citation_accuracy": 1.0,
+    "refusal_rate": 1,
+    "false_refusals": 0,
+    "latency_p50_ms": 5844,
+    "latency_p95_ms": 8125,
+    "created": "20261101_132108"
+  },
+  "cross": {
+    "runs": 3,
+    "questions": 4,
+    "run_scores": [
+      0.5,
+      0.25,
+      0.5
+    ],
+    "mean": 0.4167,
+    "spread": 0.1179,
+    "hit_rate": 1,
+    "citation_accuracy": 0.4584,
+    "refusal_rate": null,
+    "false_refusals": 0,
+    "latency_p50_ms": 11016,
+    "latency_p95_ms": 15453,
+    "created": "20261101_132326"
+  },
+  "insurance_norerank": {
+    "runs": 3,
+    "questions": 10,
+    "run_scores": [
+      0.5,
+      0.6,
+      0.7
+    ],
+    "mean": 0.6,
+    "spread": 0.0816,
+    "hit_rate": 1,
+    "citation_accuracy": 1.0,
+    "refusal_rate": 1,
+    "false_refusals": 0,
+    "latency_p50_ms": 1578,
+    "latency_p95_ms": 2359,
+    "created": "20261101_132900"
+  },
+  "compare_hospital": {
+    "p3": {
+      "mean": 0.7333,
+      "spread": 0.0471
+    },
+    "p5": {
+      "mean": 0.8,
+      "spread": 0.0
+    },
+    "runs": 3,
+    "verdict": "BEATEN",
+    "created": "20261101_150913"
+  },
+  "compare_pharma": {
+    "p3": {
+      "mean": 0.9667,
+      "spread": 0.0471
+    },
+    "p5": {
+      "mean": 0.1,
+      "spread": 0.0
+    },
+    "runs": 3,
+    "verdict": "NOT BEATEN",
+    "created": "20261101_145701"
+  }
+}
